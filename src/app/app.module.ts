@@ -8,6 +8,7 @@ import { Task1Component } from './task1/task1.component';
 import { TowWayBindingComponent } from './tow-way-binding/tow-way-binding.component';
 import { FormsModule } from '@angular/forms';
 import { StyledComponent } from './styled/styled.component';
+import { ClassComponent } from './class/class.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { StyledComponent } from './styled/styled.component';
     Task1Component,
     TowWayBindingComponent,
     StyledComponent,
+    ClassComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
