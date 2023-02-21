@@ -11,6 +11,7 @@ import { StyledComponent } from './styled/styled.component';
 import { ClassComponent } from './class/class.component';
 import { IfElseComponent } from './if-else/if-else.component';
 import { SwitchComponent } from './switch/switch.component';
+import { ForComponent } from './for/for.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SwitchComponent } from './switch/switch.component';
     ClassComponent,
     IfElseComponent,
     SwitchComponent,
+    ForComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
