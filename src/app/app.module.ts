@@ -6,10 +6,17 @@ import { PostComponent } from './post/post.component';
 import { Post2Component } from './post2/post2.component';
 import { Task1Component } from './task1/task1.component';
 import { TowWayBindingComponent } from './tow-way-binding/tow-way-binding.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, PostComponent, Post2Component, Task1Component, TowWayBindingComponent],
-  imports: [BrowserModule],
+  declarations: [
+    AppComponent,
+    PostComponent,
+    Post2Component,
+    Task1Component,
+    TowWayBindingComponent,
+  ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
