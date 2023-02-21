@@ -3,7 +3,7 @@
 </h1>
 <app-post></app-post>
 <app-post2></app-post2>
-<div>
+<div class="trash">
   <p>{{ 1 }}</p>
   <p>{{ "Ang" + "ular" }}</p>
   <p>{{ arr }}</p>
@@ -16,3 +16,6 @@
   <input type="text" name="" id="" (input)="onInputChange($event)" />
   <p>{{ inputValue }}</p>
 </div>
+<button type="button" (click)="onHandleClick()">
+  Click {{ clickCounter }}
+</button>

@@ -11,6 +11,7 @@ export class AppComponent {
   obj = { par: 'slp' };
   changeableURL = 'https://www.bsmu.edu.ua/wp-content/uploads/2019/03/6923.jpg';
   inputValue = '';
+  clickCounter = 0;
 
   constructor() {
     setTimeout(() => {
@@ -21,5 +22,9 @@ export class AppComponent {
 
   onInputChange(event?: any) {
     this.inputValue = event.target.value;
+  }
+
+  onHandleClick() {
+    this.clickCounter++;
   }
 }
