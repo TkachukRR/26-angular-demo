@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { StyledComponent } from './styled/styled.component';
 import { ClassComponent } from './class/class.component';
 import { IfElseComponent } from './if-else/if-else.component';
+import { SwitchComponent } from './switch/switch.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { IfElseComponent } from './if-else/if-else.component';
     StyledComponent,
     ClassComponent,
     IfElseComponent,
+    SwitchComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

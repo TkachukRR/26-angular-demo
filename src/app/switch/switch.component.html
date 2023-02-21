@@ -1,0 +1,19 @@
+<span [ngSwitch]="toggle">
+  <button
+    *ngSwitchCase="true"
+    type="button"
+    class="green"
+    (click)="toggle = !toggle"
+  >
+    ngSwitch Add
+  </button>
+  <button
+    *ngSwitchCase="false"
+    type="button"
+    class="red"
+    (click)="toggle = !toggle"
+  >
+    ngSwitch Remove
+  </button>
+  <button *ngSwitchDefault type="button">ngSwitch Button</button>
+</span>
