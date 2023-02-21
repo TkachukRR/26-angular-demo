@@ -9,6 +9,7 @@ import { TowWayBindingComponent } from './tow-way-binding/tow-way-binding.compon
 import { FormsModule } from '@angular/forms';
 import { StyledComponent } from './styled/styled.component';
 import { ClassComponent } from './class/class.component';
+import { IfElseComponent } from './if-else/if-else.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ClassComponent } from './class/class.component';
     TowWayBindingComponent,
     StyledComponent,
     ClassComponent,
+    IfElseComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
