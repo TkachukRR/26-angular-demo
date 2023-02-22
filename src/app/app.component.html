@@ -2,20 +2,7 @@
   <h1>
     {{ title.split("-").join(" ") }}
   </h1>
-  <h2>Post creator</h2>
-
-  <app-create-post-form (onAdd)="addPost($event)"> </app-create-post-form>
-  <hr />
-  <app-titled-post
-    *ngFor="let p of posts"
-    [post]="p"
-    (onRemove)="removePost($event)"
-  >
-    <div #info>
-      <small *ngIf="p.text.length > 10; else short"> Long post</small>
-      <ng-template #short>
-        <small>Short post</small>
-      </ng-template>
-    </div>
-  </app-titled-post>
+  <p appStyle>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, provident.
+  </p>
 </div>

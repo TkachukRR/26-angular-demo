@@ -3,11 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { TitledPostComponent } from './titled-post/titled-post.component';
-import { CreatePostFormComponent } from './create-post-form/create-post-form.component';
+import { StyleDirective } from './directives/style.directive';
 
 @NgModule({
-  declarations: [AppComponent, TitledPostComponent, CreatePostFormComponent],
+  declarations: [AppComponent, StyleDirective],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
