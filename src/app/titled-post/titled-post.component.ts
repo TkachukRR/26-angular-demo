@@ -3,6 +3,7 @@ import {
   AfterContentInit,
   AfterViewChecked,
   AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   ContentChild,
   DoCheck,
@@ -14,6 +15,7 @@ import {
   OnInit,
   Output,
   SimpleChanges,
+  ViewEncapsulation,
 } from '@angular/core';
 import { Post } from '../app.component';
 
@@ -21,6 +23,9 @@ import { Post } from '../app.component';
   selector: 'app-titled-post',
   templateUrl: './titled-post.component.html',
   styleUrls: ['./titled-post.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Default,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
 })
 export class TitledPostComponent
   implements

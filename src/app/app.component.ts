@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 export interface Post {
   title: string;
@@ -10,7 +10,7 @@ export interface Post {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = '35-angular-demo';
 
   posts: Array<Post> = [
@@ -25,5 +25,12 @@ export class AppComponent {
   removePost(id: number) {
     console.log('post ID to remove', id);
     this.posts = this.posts.filter((p) => p.id !== id);
+  }
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      console.log('timeOut');
+      this.posts[0].title = 'new title after timeout';
+    }, 3000);
   }
 }
