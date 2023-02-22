@@ -3,7 +3,7 @@
     {{ title.split("-").join(" ") }}
   </h1>
 
-  <app-create-post-form></app-create-post-form>
+  <app-create-post-form (onAdd)="addPost($event)"></app-create-post-form>
   <hr />
   <app-titled-post *ngFor="let p of posts" [post]="p"> </app-titled-post>
 </div>
