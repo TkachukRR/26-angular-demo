@@ -1,12 +1,9 @@
-<h1>
-  {{ title.split("-").join(" ") }}
-</h1>
-<!-- <app-post></app-post> -->
-<!-- <app-post2></app-post2> -->
-<!-- <app-task1></app-task1> -->
-<!-- <app-tow-way-binding></app-tow-way-binding> -->
-<!-- <app-styled></app-styled> -->
-<!-- <app-class></app-class> -->
-<!-- <app-if-else></app-if-else> -->
-<!-- <app-switch></app-switch> -->
-<!-- <app-for></app-for> -->
+<div class="container">
+  <h1>
+    {{ title.split("-").join(" ") }}
+  </h1>
+
+  <app-create-post-form></app-create-post-form>
+  <hr />
+  <app-titled-post *ngFor="let p of posts" [post]="p"> </app-titled-post>
+</div>
