@@ -6,9 +6,11 @@
   <app-create-post-form (onAdd)="addPost($event)"> </app-create-post-form>
   <hr />
   <app-titled-post *ngFor="let p of posts" [post]="p">
-    <small *ngIf="p.text.length > 10; else short"> Long post</small>
-    <ng-template #short>
-      <small>Short post</small>
-    </ng-template>
+    <div #info>
+      <small *ngIf="p.text.length > 10; else short"> Long post</small>
+      <ng-template #short>
+        <small>Short post</small>
+      </ng-template>
+    </div>
   </app-titled-post>
 </div>
