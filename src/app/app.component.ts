@@ -15,10 +15,15 @@ export class AppComponent {
 
   posts: Array<Post> = [
     { title: 'post 1', text: 'Lorem ipsum dolor sit', id: 1 },
-    { title: 'post 2', text: 'Amet consectetur adipisicing elit.', id: 1 },
+    { title: 'post 2', text: 'Amet consectetur adipisicing elit.', id: 2 },
   ];
 
   addPost(post: Post) {
     this.posts.unshift(post);
+  }
+
+  removePost(id: number) {
+    console.log('post ID to remove', id);
+    this.posts = this.posts.filter((p) => p.id !== id);
   }
 }
