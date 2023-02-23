@@ -1,15 +1,48 @@
-import { Directive, ElementRef, Renderer2, HostListener } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  Renderer2,
+  HostListener,
+  Input,
+} from '@angular/core';
 
 @Directive({
   selector: '[appStyle]',
 })
 export class StyleDirective {
+  @Input('appStyle') color: string = 'yellow';
+  @Input() fontWeight: string = 'normal';
+  @Input() directiveStyles: {
+    cursor?: string;
+    border?: string;
+    borderRadius?: string;
+  } = { cursor: 'wait', border: '1px solid tomato', borderRadius: 'none' };
+
   constructor(private elRef: ElementRef, private render: Renderer2) {
+    console.log(this.color);
     console.log(elRef);
     elRef.nativeElement.style.color = 'red';
+
     setTimeout(() => {
       this.render.setStyle(this.elRef.nativeElement, 'color', 'green');
-    }, 3000);
+    }, 2000);
+    console.log(this.fontWeight);
+
+    this.render.setStyle(
+      this.elRef.nativeElement,
+      'cursor',
+      this.directiveStyles.cursor
+    );
+    this.render.setStyle(
+      this.elRef.nativeElement,
+      'border',
+      this.directiveStyles.border
+    );
+    this.render.setStyle(
+      this.elRef.nativeElement,
+      'borderRadius',
+      this.directiveStyles.borderRadius
+    );
   }
 
   @HostListener('click', ['$event.target']) onClick(event: Event) {
@@ -17,10 +50,36 @@ export class StyleDirective {
   }
 
   @HostListener('mouseenter') onMouseEnter() {
-    this.render.setStyle(this.elRef.nativeElement, 'color', 'blue');
+    console.log(this.color);
+
+    this.render.setStyle(this.elRef.nativeElement, 'color', this.color);
+    this.render.setStyle(
+      this.elRef.nativeElement,
+      'fontWeight',
+      this.fontWeight
+    );
+    this.render.setStyle(
+      this.elRef.nativeElement,
+      'cursor',
+      this.directiveStyles.cursor
+    );
+    this.render.setStyle(
+      this.elRef.nativeElement,
+      'border',
+      this.directiveStyles.border
+    );
+    this.render.setStyle(
+      this.elRef.nativeElement,
+      'borderRadius',
+      this.directiveStyles.borderRadius
+    );
   }
 
   @HostListener('mouseleave') onMouseLeave() {
     this.render.setStyle(this.elRef.nativeElement, 'color', null);
+    this.render.setStyle(this.elRef.nativeElement, 'fontWeight', null);
+    this.render.setStyle(this.elRef.nativeElement, 'cursor', null);
+    this.render.setStyle(this.elRef.nativeElement, 'border', null);
+    this.render.setStyle(this.elRef.nativeElement, 'borderRadius', null);
   }
 }

@@ -2,7 +2,25 @@
   <h1>
     {{ title.split("-").join(" ") }}
   </h1>
-  <p appStyle>
+  <p
+    appStyle="tomato"
+    [fontWeight]="'bold'"
+    [directiveStyles]="{
+      cursor: 'pointer',
+      border: '1px solid gray',
+      borderRadius: '8px'
+    }"
+  >
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, provident.
+  </p>
+
+  <p
+    appStyle="pink"
+    [fontWeight]="'bold'"
+    [directiveStyles]="{
+      border: '1px solid brown'
+    }"
+  >
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, provident.
   </p>
 </div>
