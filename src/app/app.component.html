@@ -45,4 +45,7 @@
       {{ post.text }}
     </p>
   </div>
+
+  <p>wait{{ promise | async }}</p>
+  <p>{{ dateNow | async | date : "HH:mm:ss" }}</p>
 </div>

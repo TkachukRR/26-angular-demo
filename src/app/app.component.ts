@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 
 export interface Post {
   title: string;
@@ -37,6 +38,18 @@ export class AppComponent {
 
   search = '';
   searchField = 'title';
+
+  promise: Promise<string> = new Promise<string>((resolve) =>
+    setTimeout(() => {
+      resolve('Promise resolved');
+    }, 3000)
+  );
+
+  dateNow: Observable<Date> = new Observable((obs) => {
+    setInterval(() => {
+      obs.next(new Date());
+    }, 1000);
+  });
 
   addPost() {
     this.posts.unshift({
