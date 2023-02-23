@@ -9,4 +9,5 @@ export class AppComponent {
   title = 'Angular pipes';
 
   e: number = Math.E;
+  str: string = 'new string example';
 }

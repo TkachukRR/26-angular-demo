@@ -2,7 +2,15 @@
   <h1>
     {{ title.split("-").join(" ") }}
   </h1>
+  <p>{{ e }}</p>
   <p>{{ e | number : "1.1-1" }}</p>
   <p>{{ e | number : "2.2-2" }}</p>
   <p>{{ e | number : "1.1-5" }}</p>
+
+  <p>{{ str }}</p>
+  <p>{{ str | uppercase }}</p>
+  <p>{{ str | titlecase }}</p>
+  <p>{{ str | slice : 1 }}</p>
+  <p>{{ str | slice : 1 : 5 }}</p>
+  <p>{{ str | slice : 1 : -1 }}</p>
 </div>
