@@ -10,4 +10,5 @@ export class AppComponent {
 
   e: number = Math.E;
   str: string = 'new string example';
+  date: Date = new Date();
 }
