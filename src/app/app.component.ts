@@ -9,4 +9,5 @@ export class AppComponent {
   title = 'Angular directives';
 
   isVisible = true;
+  isVisible2 = true;
 }

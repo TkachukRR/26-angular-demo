@@ -1,10 +1,19 @@
-import { Directive } from '@angular/core';
+import { Directive, TemplateRef, ViewContainerRef, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appIfont]'
+  selector: '[appIfnot]',
 })
-export class IfontDirective {
+export class IfnotDirective {
+  @Input('appIfnot') set ifNot(condition: boolean) {
+    if (!condition) {
+      this.viewContainer.createEmbeddedView(this.templateRef);
+    } else {
+      this.viewContainer.clear();
+    }
+  }
 
-  constructor() { }
-
+  constructor(
+    private templateRef: TemplateRef<any>,
+    private viewContainer: ViewContainerRef
+  ) {}
 }
