@@ -2,57 +2,7 @@
   <h1>
     {{ title.split("-").join(" ") }}
   </h1>
-  <p
-    appStyle="tomato"
-    [fontWeight]="'bold'"
-    [directiveStyles]="{
-      cursor: 'pointer',
-      border: '1px solid gray',
-      borderRadius: '8px'
-    }"
-  >
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, provident.
-  </p>
-
-  <p
-    appStyle="pink"
-    [fontWeight]="'bold'"
-    [directiveStyles]="{
-      border: '1px solid brown'
-    }"
-  >
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, provident.
-  </p>
-
-  <button class="btn" (click)="isVisible = !isVisible">Toggle</button>
-  <button class="btn" (click)="isVisible2 = !isVisible2">Toggle2</button>
-
-  <!-- <div class="wrap" *ngIf="isVisible">
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, rem
-      incidunt possimus aliquam molestias laborum?
-    </p>
-  </div> -->
-
-  <!-- <ng-template [ngIf]="isVisible">
-    <div class="wrap">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, rem
-        incidunt possimus aliquam molestias laborum?
-      </p>
-    </div>
-  </ng-template> -->
-
-  <div class="wrap" *appIfnot="!isVisible">
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, rem
-      incidunt possimus aliquam molestias laborum?
-    </p>
-  </div>
-
-  <ng-template [appIfnot]="!isVisible2">
-    <div class="wrap">
-      <p>Lorem</p>
-    </div>
-  </ng-template>
+  <p>{{ e | number : "1.1-1" }}</p>
+  <p>{{ e | number : "2.2-2" }}</p>
+  <p>{{ e | number : "1.1-5" }}</p>
 </div>

@@ -6,8 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Angular directives';
+  title = 'Angular pipes';
 
-  isVisible = true;
-  isVisible2 = true;
+  e: number = Math.E;
 }
