@@ -37,4 +37,11 @@ export class AppComponent {
 
   search = '';
   searchField = 'title';
+
+  addPost() {
+    this.posts.unshift({
+      title: 'sprite',
+      text: 'Good drink ddd',
+    });
+  }
 }
