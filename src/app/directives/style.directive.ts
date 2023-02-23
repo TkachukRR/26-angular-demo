@@ -4,19 +4,22 @@ import {
   Renderer2,
   HostListener,
   Input,
+  HostBinding,
 } from '@angular/core';
 
 @Directive({
   selector: '[appStyle]',
 })
 export class StyleDirective {
-  @Input('appStyle') color: string = 'yellow';
+  @Input('appStyle') color: any = 'yellow';
   @Input() fontWeight: string = 'normal';
   @Input() directiveStyles: {
     cursor?: string;
     border?: string;
     borderRadius?: string;
   } = { cursor: 'wait', border: '1px solid tomato', borderRadius: 'none' };
+
+  @HostBinding('style.color') elColor = null;
 
   constructor(private elRef: ElementRef, private render: Renderer2) {
     console.log(this.color);
@@ -73,6 +76,8 @@ export class StyleDirective {
       'borderRadius',
       this.directiveStyles.borderRadius
     );
+
+    this.elColor = this.color;
   }
 
   @HostListener('mouseleave') onMouseLeave() {

@@ -23,4 +23,21 @@
   >
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, provident.
   </p>
+
+  <button class="btn" (click)="isVisible = !isVisible">Toggle</button>
+
+  <!-- <div class="wrap" *ngIf="isVisible">
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, rem
+      incidunt possimus aliquam molestias laborum?
+    </p>
+  </div> -->
+  <ng-template [ngIf]="isVisible">
+    <div class="wrap">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, rem
+        incidunt possimus aliquam molestias laborum?
+      </p>
+    </div>
+  </ng-template>
 </div>
