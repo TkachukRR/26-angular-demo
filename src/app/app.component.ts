@@ -23,17 +23,18 @@ export class AppComponent {
   posts: Array<Post> = [
     {
       title: 'Beer',
-      text: 'The best beer',
+      text: 'The best beer vvv',
     },
     {
       title: 'milk',
-      text: 'The best milk',
+      text: 'The best milk aaa',
     },
     {
       title: 'cola',
-      text: 'The best drink',
+      text: 'The best drink ccc',
     },
   ];
 
   search = '';
+  searchField = 'title';
 }

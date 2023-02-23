@@ -32,9 +32,12 @@
   <p>{{ str | exMarks }}</p>
 
   <input type="text" name="" id="" [(ngModel)]="search" />
-  <div *ngFor="let post of posts" class="card">
+  <button class="btn" (click)="searchField = 'title'">Title</button>
+  <button class="btn" (click)="searchField = 'text'">Text</button>
+
+  <div *ngFor="let post of posts | filter : search : searchField" class="card">
     <h2>
-      {{ post.title }}
+      {{ post.title | titlecase }}
     </h2>
     <p>
       {{ post.text }}
