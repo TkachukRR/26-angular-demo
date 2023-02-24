@@ -28,12 +28,13 @@
 
       <!-- <pre>{{ form.get("password")?.errors | json }}</pre> -->
       <!-- <pre>{{ form.get("password")?.invalid | json }}</pre> -->
+      <!-- <pre>{{ form.get("password")?.errors?.['minLength'] | json }}</pre> -->
 
       <div
         *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
         class="validation"
       >
-        <small *ngIf="form.get('password')?.errors?.['required']">
+        <small *ngIf="form.get('password')?.hasError('required')">
           is empty flied
         </small>
         <small *ngIf="form.get('password')?.errors?.['minLength'] !== null">
@@ -42,13 +43,13 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card" formGroupName="address">
       <h2>Address</h2>
 
       <div class="form-control">
         <label>Country</label>
 
-        <select>
+        <select formControlName="country">
           <option value="ua">Ukraine</option>
           <option value="pl">Poland</option>
           <option value="by">Belarus</option>
@@ -56,7 +57,7 @@
       </div>
 
       <div class="form-control">
-        <input type="text" />
+        <input type="text" formControlName="city" placeholder="enter city" />
       </div>
 
       <button class="btn" type="button">Capital city</button>
