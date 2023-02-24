@@ -13,7 +13,7 @@ export class MyValidators {
     [key: string]: boolean;
   } {
     const resultedArray: boolean = ['mail.ru', '.ru'].some((el) => {
-      return control.value.endsWith(el);
+      return control.value.includes(el);
     });
     if (resultedArray) {
       return { restrictedEmailsServices: true };
