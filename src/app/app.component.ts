@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular ngModel';
+
+  appState = 'off';
+
+  handleChange() {
+    console.log(this.appState);
+  }
 }

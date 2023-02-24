@@ -2,4 +2,13 @@
   <h1>
     {{ title.split("-").join(" ") }}
   </h1>
+
+  <app-switch
+    [(ngModel)]="appState"
+    (ngModelChange)="handleChange()"
+  ></app-switch>
+
+  <hr />
+
+  <p>{{ appState }}</p>
 </div>
