@@ -12,9 +12,12 @@
         class="validation"
       >
         <small *ngIf="form.get('email')?.errors?.['required']">
-          is empty flied</small
-        >
+          is empty flied
+        </small>
         <small *ngIf="form.get('email')?.errors?.['email']"> isn't email</small>
+        <!-- <small *ngIf="form.get('email')?.errors?.['restrictedEmails']">
+          is restricted Email</small -->
+        >
       </div>
     </div>
 
@@ -26,7 +29,7 @@
         formControlName="password"
       />
 
-      <!-- <pre>{{ form.get("password")?.errors | json }}</pre> -->
+      <!-- <pre>{{ form.get("password")?.['errors'] | json }}</pre> -->
       <!-- <pre>{{ form.get("password")?.invalid | json }}</pre> -->
       <!-- <pre>{{ form.get("password")?.errors?.['minLength'] | json }}</pre> -->
 
