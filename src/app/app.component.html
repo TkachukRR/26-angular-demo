@@ -3,7 +3,7 @@
     {{ title.split("-").join(" ") }}
   </h1>
 
-  <form class="card">
+  <form class="card" [formGroup]="form" (ngSubmit)="submit()">
     <div class="form-control">
       <label>Email</label>
       <input type="text" placeholder="Email" />
@@ -33,18 +33,18 @@
         <input type="text" />
       </div>
 
-      <button class="btn">Capital city</button>
+      <button class="btn" type="button">Capital city</button>
     </div>
 
     <div class="card">
       <h2>Skills</h2>
-      <button class="btn">skill</button>
+      <button class="btn" type="button">Add skill</button>
       <div class="form-control">
         <label></label>
         <input type="text" />
       </div>
     </div>
 
-    <button class="btn">Send</button>
+    <button class="btn" type="submit">Send</button>
   </form>
 </div>
