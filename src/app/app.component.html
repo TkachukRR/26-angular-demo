@@ -3,18 +3,48 @@
     {{ title.split("-").join(" ") }}
   </h1>
 
-  <div class="card">
-    <h2>App counter {{ appCounterService.counter }}</h2>
-    <button class="btn" (click)="appCounterService.increase()">+</button>
-    <button class="btn" (click)="appCounterService.decrease()">-</button>
-  </div>
+  <form class="card">
+    <div class="form-control">
+      <label>Email</label>
+      <input type="text" placeholder="Email" />
+      <div class="validation"></div>
+    </div>
 
-  <div class="card">
-    <h2>Local counter {{ localCounterService.counter }}</h2>
-    <button class="btn" (click)="localCounterService.increase()">+</button>
-    <button class="btn" (click)="localCounterService.decrease()">-</button>
-  </div>
+    <div class="form-control">
+      <label>Password</label>
+      <input type="password" placeholder="Password" />
+      <div class="validation"></div>
+    </div>
 
-  <hr />
-  <app-counter></app-counter>
+    <div class="card">
+      <h2>Address</h2>
+
+      <div class="form-control">
+        <label>Country</label>
+
+        <select>
+          <option value="ua">Ukraine</option>
+          <option value="pl">Poland</option>
+          <option value="by">Belarus</option>
+        </select>
+      </div>
+
+      <div class="form-control">
+        <input type="text" />
+      </div>
+
+      <button class="btn">Capital city</button>
+    </div>
+
+    <div class="card">
+      <h2>Skills</h2>
+      <button class="btn">skill</button>
+      <div class="form-control">
+        <label></label>
+        <input type="text" />
+      </div>
+    </div>
+
+    <button class="btn">Send</button>
+  </form>
 </div>
