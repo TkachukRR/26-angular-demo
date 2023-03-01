@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { delay } from 'rxjs';
 
 export interface Todo {
   completed: boolean;
@@ -49,6 +50,7 @@ export class AppComponent implements OnInit {
     this.loading = true;
     this.http
       .get<Todo[]>('https://jsonplaceholder.typicode.com/todos?_limit=2')
+      .pipe(delay(2000))
       .subscribe((todoList) => {
         console.log(todoList);
         this.todos = todoList;
