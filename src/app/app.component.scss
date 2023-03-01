@@ -7,11 +7,4 @@ p {
 }
 
 input {
-  &.ng-invalid.ng-touched {
-    border: 1px solid red;
-  }
-
-  &.ng-valid.ng-touched {
-    border: 1px solid green;
-  }
 }

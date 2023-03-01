@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   title = 'Angular HTTP client';
 
   todos: Array<Todo> = [];
+  todoTitle = '';
 
   constructor(private http: HttpClient) {}
 
@@ -24,6 +25,27 @@ export class AppComponent implements OnInit {
       .subscribe((todoList) => {
         console.log(todoList);
         this.todos = todoList;
+      });
+  }
+
+  addTodo() {
+    if (!this.todoTitle.trim()) {
+      return;
+    }
+
+    const newTodo: Todo = {
+      title: this.todoTitle,
+      completed: false,
+    };
+
+    this.http
+      .post<Todo>('https://jsonplaceholder.typicode.com/todos', {
+        ...newTodo,
+      })
+      .subscribe((todo) => {
+        console.log(todo);
+        this.todos.push(todo);
+        this.todoTitle = '';
       });
   }
 }
