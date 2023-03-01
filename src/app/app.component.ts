@@ -16,16 +16,12 @@ export class AppComponent implements OnInit {
 
   todos: Array<Todo> = [];
   todoTitle = '';
+  loading = false;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.http
-      .get<Todo[]>('https://jsonplaceholder.typicode.com/todos?_limit=2')
-      .subscribe((todoList) => {
-        console.log(todoList);
-        this.todos = todoList;
-      });
+    this.fetchTodos();
   }
 
   addTodo() {
@@ -46,6 +42,17 @@ export class AppComponent implements OnInit {
         console.log(todo);
         this.todos.push(todo);
         this.todoTitle = '';
+      });
+  }
+
+  fetchTodos() {
+    this.loading = true;
+    this.http
+      .get<Todo[]>('https://jsonplaceholder.typicode.com/todos?_limit=2')
+      .subscribe((todoList) => {
+        console.log(todoList);
+        this.todos = todoList;
+        this.loading = false;
       });
   }
 }
