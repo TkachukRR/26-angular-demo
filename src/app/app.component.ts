@@ -5,11 +5,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Angular ngModel';
-
-  appState = 'off';
-
-  handleChange() {
-    console.log(this.appState);
-  }
+  title = 'Angular HTTP client';
 }
