@@ -21,9 +21,18 @@ export class PostsComponent implements OnInit{
         this.showIds = !!params?.['showIds']
       }
     )
+
+    this.route.fragment.subscribe((fragment) => {
+      console.log(fragment)
+    })
   }
 
   showIdsProgram() {
-    this.router.navigate(['/posts']), {queryParams:{ showIds: true}}
+    this.router.navigate(['/posts'], {
+      queryParams:{
+        showIds: true
+      },
+      fragment: 'program-fragment'
+    })
   }
 }
