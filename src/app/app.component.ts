@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { delay } from 'rxjs';
 import { Todo, TodosService } from './todos.service';
 
 @Component({
@@ -53,6 +52,14 @@ export class AppComponent implements OnInit {
       console.log(this.todos);
       this.todos = this.todos.filter((todo) => todo.id !== id);
       console.log(this.todos);
+    });
+  }
+
+  completeTodo(id: number) {
+    this.todosService.completeTodo(id).subscribe((todo) => {
+      console.log(todo);
+      // @ts-ignore
+      this.todos.find((t) => t.id === todo.id).completed = true;
     });
   }
 }

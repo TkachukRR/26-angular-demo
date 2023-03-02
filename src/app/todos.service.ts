@@ -5,7 +5,7 @@ import { delay, Observable } from 'rxjs';
 export interface Todo {
   completed: boolean;
   title: string;
-  id?: any;
+  id?: number;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -27,6 +27,15 @@ export class TodosService {
   removeTodo(id: number): Observable<void> {
     return this.http.delete<void>(
       `https://jsonplaceholder.typicode.com/todos/${id}`
+    );
+  }
+
+  completeTodo(id: number): Observable<Todo> {
+    return this.http.put<Todo>(
+      `https://jsonplaceholder.typicode.com/todos/${id}`,
+      {
+        copleted: true,
+      }
     );
   }
 }
