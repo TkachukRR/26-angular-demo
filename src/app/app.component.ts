@@ -5,7 +5,7 @@ import { delay } from 'rxjs';
 export interface Todo {
   completed: boolean;
   title: string;
-  id?: number;
+  id?: any;
 }
 @Component({
   selector: 'app-root',
@@ -55,6 +55,17 @@ export class AppComponent implements OnInit {
         console.log(todoList);
         this.todos = todoList;
         this.loading = false;
+      });
+  }
+
+  removeTodo(id: number) {
+    this.http
+      .delete<void>(`https://jsonplaceholder.typicode.com/todos/${id}`)
+      .subscribe((deletedTodo) => {
+        console.log(deletedTodo);
+        console.log(this.todos);
+        this.todos = this.todos.filter((todo) => todo.id !== id);
+        console.log(this.todos);
       });
   }
 }
