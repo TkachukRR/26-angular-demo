@@ -1,6 +1,7 @@
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from "@angular/router";
 import {Post, PostsService} from "./posts.service";
-import {Observable} from "rxjs";
+import { Observable, of} from "rxjs";
+import {delay} from "rxjs/operators";
 import {Injectable} from "@angular/core";
 
 @Injectable({providedIn: 'root'})
@@ -10,9 +11,12 @@ export class PostResolver implements Resolve<Post>{
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<Post> | Promise<Post> | Post {
-    // @ts-ignore
-    return this.postService.getById(+route.params['id'])
+  ): Observable<Post> | Promise<Post> | Post  {
+    return of(this.postService.getById(+route.params['id']))
+      .pipe(
+        // @ts-ignore
+        delay(1500)
+      )
   }
 
 }
