@@ -14,7 +14,8 @@ const routes: Routes = [
     ]},
   {path: 'posts', component: PostsComponent},
   {path: 'posts/:id', component: PostComponent},
-  {path: 'error', component: ErrorPageComponent}
+  {path: 'error', component: ErrorPageComponent},
+  {path: '**', redirectTo: '/error'}
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
