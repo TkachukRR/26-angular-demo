@@ -17,7 +17,12 @@ export class PostComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.post = this.route.snapshot.data['post'] //snapshot - is static object
+    // this.post = this.route.snapshot.data['post'] //snapshot - is static object
+
+    this.route.data.subscribe(data => {
+      this.post = data['post']
+    })
+
     // this.route.params.subscribe((params)=> {
     //   console.log(params)
     //   // @ts-ignore
