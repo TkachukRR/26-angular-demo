@@ -13,8 +13,13 @@ export class AppComponent {
   constructor(
     private resolver: ComponentFactoryResolver,
     private title: Title,
+    private meta: Meta
   ) {
     this.title.setTitle('App Component Page!')
+    this.meta.addTags([
+      {name: 'keywords', content: 'angular, google, appcomponent'},
+      {name: 'description', content: 'this is app component'}
+    ])
   }
   showModal() {
     const modalFactory = this.resolver.resolveComponentFactory(ModalComponent)
